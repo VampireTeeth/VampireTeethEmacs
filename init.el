@@ -102,6 +102,7 @@
 (require 'init-dash)
 (require 'init-ledger)
 (require 'init-evil)
+(require 'init-key-chord)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

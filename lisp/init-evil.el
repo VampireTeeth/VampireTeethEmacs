@@ -2,8 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 (require-package 'evil)
-(require-package 'key-chord)
-(require 'key-chord)
+;;(require-package 'key-chord)
+;;(require 'key-chord)
 
 (evil-mode 1)
 (define-key evil-normal-state-map  (kbd "<SPC> h") 'windmove-left)
@@ -25,9 +25,9 @@
                 (set-face-background 'mode-line (car color))
                 (set-face-foreground 'mode-line (cdr color))))))
 
-(key-chord-mode 1)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-visual-state-map  "jk" 'evil-normal-state)
+;;(key-chord-mode 1)
+;;(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;;(key-chord-define evil-visual-state-map  "jk" 'evil-normal-state)
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
