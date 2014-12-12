@@ -103,6 +103,7 @@
 (require 'init-ledger)
 (require 'init-evil)
 (require 'init-key-chord)
+(require 'init-php-refactor-mode)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
