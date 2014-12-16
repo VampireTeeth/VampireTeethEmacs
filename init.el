@@ -101,10 +101,11 @@
 
 (require 'init-dash)
 (require 'init-ledger)
-(require 'init-etags-select)
+
 (require 'init-evil)
 (require 'init-key-chord)
 (require 'init-php-refactor-mode)
+(require 'init-etags-select)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

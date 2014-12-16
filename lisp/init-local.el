@@ -2,9 +2,10 @@
 ;;; Code:
 ;;; Commentary:
 
-(set-frame-font "DejaVu Sans Mono-13" nil t)
+;;;(set-frame-font "DejaVu Sans Mono-13" nil t)
 
 (defun my-local-config ()
+  "My local configurations."
   (local-set-key (kbd "RET") 'newline-and-indent)
   (setq tab-width 2)
   (setq c-basic-offset 2)
