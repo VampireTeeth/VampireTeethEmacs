@@ -14,7 +14,27 @@
   (blink-cursor-mode 0)
   (setq python-indent 2))
 
-(add-hook 'prog-mode-hook 'my-local-config)
 
+(defun etags-build-load (dir maxdepth extension)
+  "Build and reload etags files."
+  (interactive "DDirectory: \nnMaxdepth: \nsExtension: ")
+  (let ((tags-file (format "%s/TAGS" dir))
+        (etags-cmd "find %s -maxdepth %d -name \"*.%s\" -exec ctags -e -a -f %s {} \\;"))
+    (if (file-exists-p tags-file)
+        (delete-file tags-file))
+    (eshell-command (format etags-cmd dir maxdepth extension tags-file))
+    (visit-tags-table tags-file)))
+
+(defun etags-load (dir)
+  "Load the etags files."
+  (interactive "DDirectory: ")
+  (let ((tags-file (format "%s/TAGS" dir)))
+    (visit-tags-table tags-file)))
+
+(add-hook 'prog-mode-hook 'my-local-config)
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (define-key evil-normal-state-map (kbd "C-x e b") 'etags-build-load)
+            (define-key evil-normal-state-map (kbd "C-x e l") 'etags-load)))
 (provide 'init-local)
 ;;; init-local.el ends here
