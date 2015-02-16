@@ -36,5 +36,6 @@
           (lambda ()
             (define-key evil-normal-state-map (kbd "C-x e b") 'etags-build-load)
             (define-key evil-normal-state-map (kbd "C-x e l") 'etags-load)))
+(add-hook 'after-init-hook (lambda () (color-theme-sanityinc-tomorrow-eighties)))
 (provide 'init-local)
 ;;; init-local.el ends here
